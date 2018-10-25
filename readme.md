@@ -8,13 +8,17 @@ The need for this files is to create a BEd file which describes the capture regi
 
 The output of the script will be a BED file with the caputure ROI as the first three columns and the forth being a description of the exon that region intersects.
 
+Please read SOP before running this script.
+
 ## Requirements
 
 - Tested on Linux and MacOS - should work on any standard UNIX system.
 
-- bedtools installed and added to path. Either add to path or change the $BEDTOOLS variable in the script.
+- bedtools installed and added to path. Either add to path or change the $BEDTOOLS variable in the script to the install location.
 
 ## Run
+
+Download the latest version of the script.
 
 Within a terminal type:
 
@@ -32,7 +36,7 @@ Previous to this script the BED files were made manually on the command line usi
 
 The output of the script was compared with five of these BED files to check that it produced identical output.
 
-The location of the testing files can be found at:
+The location of the testing files can be found at: /data/results/in_house_tool_validations/make_roi_bed/
 
-The location of the BEDs used by the pipeline can be found at:
+The location of the BEDs used by the pipeline can be found at: /data/diagnostics/pipelines/GermlineEnrichment/GermlineEnrichment-{version}/IlluminaTruSightCancer/hotspot_coverage
 
