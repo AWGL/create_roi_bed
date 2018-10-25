@@ -4,7 +4,7 @@
 
 A script to make the gene specific Region of Interest (ROI) BED files for the TruSightOneCancer Panel.
 
-The need for this files is to create a BEd file which describes the capture regions that are present within a specific transcript.
+The need for this files is to create a BED file which describes the capture regions that are present within a specific transcript.
 
 The output of the script will be a BED file with the caputure ROI as the first three columns and the forth being a description of the exon that region intersects.
 
@@ -22,7 +22,7 @@ Download the latest version of the script.
 
 Within a terminal type:
 
-`bash make_roi_bed.sh $TRANSCRIPT_ID $GENE_MODEL $CAPTURE_BED`
+`bash make_roi_bed.sh $TRANSCRIPT_ID $GENE_MODEL $CAPTURE_BED $GENE_NAME`
 
 For example:
 
@@ -34,7 +34,7 @@ Note that the script assumes that bedtools is in your path. Either add it or edi
 
 Previous to this script the BED files were made manually on the command line using bedtools.
 
-The output of the script was compared with five of these BED files to check that it produced identical output.
+The output of the script was compared with five (BRCA1, BRCA2, FH, NF2 and PMS2) of these BED files to check that it produced identical output. The output was sufficiently similar that tool was judged to be working correctly. The only differences observed were in the 4th BED column annotation.
 
 The location of the testing files can be found at: /data/results/in_house_tool_validations/make_roi_bed/
 

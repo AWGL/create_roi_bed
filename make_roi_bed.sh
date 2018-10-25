@@ -1,5 +1,4 @@
 #!bin/bash
-set -euo pipefail
 
 # The purpose of this script is to create a BED file of the capture regions that fall within a given transcript.
 # Usage is as follows:
@@ -14,7 +13,6 @@ if [ -z "$1" ]
     echo "No Transcript ID argument provided e.g. ENST00000397752."
     exit 1
 fi
-
 
 if [ -z "$2" ]
   then
@@ -43,7 +41,7 @@ GENE_NAME=$4
 
 #Where is bedtools?
 
-BEDTOOLS=bedtools
+BEDTOOLS=''
 
 #Make the bed
-grep $TRANSCRIPT_ID $GENE_MODEL | grep exon | $BEDTOOLS intersect -a $CAPTURE_BED -b - -wa -wb | awk -v gene_name="${GENE_NAME}" 'BEGIN { OFS="\t" } {print $1,$2,$3,gene_name".chr"$1"."$7"."$8}'
+grep $TRANSCRIPT_ID $GENE_MODEL | grep exon | "$BEDTOOLS"intersectBed -a $CAPTURE_BED -b - -wa -wb | awk -v gene_name="${GENE_NAME}" 'BEGIN { OFS="\t" } {print $1,$2,$3,gene_name".chr"$1"."$7"."$8}'
